@@ -14,9 +14,10 @@ jobs:
       - checkout
       - run: bundle install && bundle exec rspec
   publish: &publish
-    branches:
-      only:
-        - master
+    filters:
+      branches:
+        only:
+          - master
     docker:
       - image: ruby:2.6
     steps:
